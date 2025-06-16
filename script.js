@@ -9,7 +9,6 @@ btn.addEventListener("click", () => {
   video.setAttribute("controls", true);
   video.currentTime = 0;
 
-  // Force video to play, fallback if autoplay is blocked
   const playPromise = video.play();
   if (playPromise !== undefined) {
     playPromise.catch(() => {
@@ -41,7 +40,4 @@ clips.forEach((clip) => {
   clip.loop = true;
   clip.muted = true;
   clip.play();
-
-  // Ensure it restarts if somehow ends
-  clip.addEventListener("ended", () => clip.play());
 });
