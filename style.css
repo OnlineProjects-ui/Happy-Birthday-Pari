@@ -1,88 +1,85 @@
-body {
+/* style.css - Gen Z Aesthetic */
+
+/* Reset & Fonts */
+body, html {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0e0e0e;
-  color: #fff;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #f8e1f4, #d2e5fa);
   overflow-x: hidden;
+  color: #333;
 }
 
+/* Background Stars */
+.stars::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url('https://i.imgur.com/8F9EikA.png') repeat;
+  z-index: -1;
+  opacity: 0.3;
+  animation: twinkle 50s linear infinite;
+}
+
+@keyframes twinkle {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 10000px; }
+}
+
+/* Sticky Note */
 .sticky-note {
-  background: #fff3cd;
-  color: #212529;
-  padding: 1em;
-  border: 2px dashed #ffc107;
+  background: #fffbe7;
+  border: 2px dashed #f5b1b1;
+  padding: 1rem;
   width: fit-content;
-  margin: 1em auto;
-  text-align: center;
+  max-width: 80%;
+  margin: 1.5rem auto;
   border-radius: 10px;
-  font-weight: bold;
+  text-align: center;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  font-size: 1rem;
+  color: #444;
 }
 
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 3em 1em;
-  background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+  padding: 3rem 1rem;
+  color: #6d28d9;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5em;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 5px #fff;
 }
 
-.hero .subtitle {
+.subtitle {
   font-size: 1.2rem;
-  margin-bottom: 1em;
+  color: #555;
+  margin-bottom: 2rem;
 }
 
 .play-btn {
-  background: #fff;
+  padding: 0.75rem 1.5rem;
+  background: #a855f7;
+  color: white;
   border: none;
-  color: #ff4081;
-  padding: 0.8em 1.5em;
+  border-radius: 9999px;
   font-size: 1rem;
-  border-radius: 25px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
+  box-shadow: 0 0 10px #a855f7;
+  transition: transform 0.2s;
 }
 
 .play-btn:hover {
-  background: #f8f8f8;
+  transform: scale(1.05);
 }
 
-.gallery {
-  padding: 2em 1em;
-  text-align: center;
-}
-
-.gallery h2 {
-  margin-bottom: 1em;
-}
-
-.gallery-grid {
-  display: grid;
-  gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 0 1em;
-}
-
-.gallery-grid img,
-.gallery-grid video {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-footer {
-  text-align: center;
-  padding: 2em 1em;
-  background: #1c1c1c;
-  font-size: 1rem;
-  color: #aaa;
-}
-
+/* Modal Styling */
 .modal {
   display: none;
   position: fixed;
@@ -91,23 +88,103 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.9);
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
 }
 
-.modal video {
-  max-width: 90%;
-  max-height: 80%;
-  margin: 5% auto;
-  display: block;
-  border-radius: 10px;
-}
-
-.close {
+.modal .close {
   position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
+  top: 1rem;
+  right: 2rem;
+  color: white;
+  font-size: 2rem;
   cursor: pointer;
+}
+
+#mainVideo {
+  width: 90%;
+  max-height: 80vh;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px #fff;
+}
+
+/* Gallery */
+.gallery {
+  padding: 2rem;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #4c1d95;
+}
+
+.gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery-content img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.gallery-content img:hover {
+  transform: scale(1.05);
+}
+
+/* Clips */
+.clips {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.clips video {
+  width: 250px;
+  height: 400px;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1rem;
+  color: #6b21a8;
+}
+
+/* Confetti Canvas */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .clips video,
+  .gallery-content img {
+    width: 90vw;
+    height: auto;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
