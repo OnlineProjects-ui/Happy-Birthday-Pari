@@ -1,22 +1,21 @@
-const modal = document.getElementById("video-modal");
-const video = document.getElementById("main-video");
-const playBtn = document.getElementById("play-button");
-const closeBtn = document.querySelector(".close");
+const modal = document.getElementById("modal");
+const btn = document.getElementById("openModal");
+const span = document.getElementsByClassName("close")[0];
+const video = document.getElementById("surpriseVideo");
 
-playBtn.onclick = () => {
-  modal.style.display = "flex";
-  video.currentTime = 0;
+btn.onclick = function () {
+  modal.style.display = "block";
   video.play();
 };
 
-closeBtn.onclick = () => {
+span.onclick = function () {
   modal.style.display = "none";
   video.pause();
   video.currentTime = 0;
 };
 
-window.onclick = (e) => {
-  if (e.target === modal) {
+window.onclick = function (event) {
+  if (event.target == modal) {
     modal.style.display = "none";
     video.pause();
     video.currentTime = 0;
