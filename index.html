@@ -2,42 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Pari 🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 18th Birthday Pari 🎉</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>Happy 18th Birthday Pari! 🎉</h1>
-    <p class="msg">Pichli baar nahi daali thi uske liye sorry... iss baar uski kasar nikal di 💖</p>
 
-    <div class="gallery">
-      <img src="img1.jpg" alt="Pari 1" />
-      <img src="img2.jpg" alt="Pari 2" />
-      <img src="img3.jpg" alt="Pari 3" />
-      
-      <video autoplay muted loop class="bg-video"><source src="clip1.mp4" type="video/mp4" /></video>
-      <video autoplay muted loop class="bg-video"><source src="clip2.mp4" type="video/mp4" /></video>
-      <video autoplay muted loop class="bg-video"><source src="clip3.mp4" type="video/mp4" /></video>
-    </div>
+  <header>
+    <h1>Happy 18th Birthday Pari 🎂✨</h1>
+    <p class="sorry-note">Pichli baar nhi Dali thi uske liye sorry 😔 iss bar uski kasar nikal di 😄</p>
+  </header>
 
-    <button class="play-btn" onclick="playVideo()">💝 Tap to Reveal Your Surprise 💝</button>
-
-    <div class="video-popup" id="videoPopup">
-      <video id="birthdayVideo" controls>
-        <source src="main.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <button onclick="closeVideo()">❌ Close</button>
-    </div>
+  <!-- Short Clips -->
+  <div class="video-strip">
+    <video src="clip1.mp4" autoplay muted loop></video>
+    <video src="clip2.mp4" autoplay muted loop></video>
+    <video src="clip3.mp4" autoplay muted loop></video>
   </div>
 
-  <audio autoplay loop>
-    <source src="birthday_music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <!-- Image Gallery -->
+  <div class="gallery">
+    <img src="img1.jpg" alt="Pari Pic 1">
+    <img src="img2.jpg" alt="Pari Pic 2">
+    <img src="img3.jpg" alt="Pari Pic 3">
+  </div>
 
-  <canvas id="confetti-canvas"></canvas>
+  <!-- Main Video Button -->
+  <div class="btn-wrap">
+    <button id="playVideo">Click Here for a Surprise 🎁</button>
+  </div>
+
+  <!-- Video Popup -->
+  <div class="video-popup" id="videoPopup">
+    <span id="closePopup">&times;</span>
+    <video src="main.mp4" controls autoplay></video>
+  </div>
+
+  <footer>
+    <p>With love, from your friend 💖</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
