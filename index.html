@@ -1,45 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Pari!</title>
+  <title>Happy Birthday Pari</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="note">Pichli baar nhi dali thi uske liye sorry<br>iss baar uski kasar nikal di 🥺</div>
+  <!-- Background Stars -->
+  <div class="stars"></div>  <!-- Background Music --><audio id="bg-music" src="birthday_music.mp3" autoplay loop></audio>
 
-  <h1>Happy 18th Birthday, Pari! 🎉</h1>
-  <p>This day is all yours... 💖</p>
-  <button id="openModal">Click for a Surprise!</button>
-
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <video id="surpriseVideo" controls autoplay muted>
-        <source src="assets/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+  <!-- Sticky Note -->  <div class="sticky-note">
+    <p>Pichli baar nhi dali thi uske liye sorry<br>iss baar uski kasar nikal di 🫩</p>
+  </div>  <!-- Hero Section -->  <section class="hero">
+    <h1>Happy 18th Birthday, Pari! 🎉</h1>
+    <p class="subtitle">This day is all yours... 💖</p>
+    <button class="play-btn" onclick="openModal()">Click for a Surprise!</button>
+  </section>  <!-- Modal for Main Video -->  <div id="videoModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <video id="mainVideo" controls>
+      <source src="main.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>  <!-- Gallery Section -->  <section class="gallery">
+    <h2>Some Memories Together</h2>
+    <div class="gallery-content">
+      <img src="img1.jpg" alt="Image 1" />
+      <img src="img2.jpg" alt="Image 2" />
+      <img src="img3.jpg" alt="Image 3" />
     </div>
-  </div>
+  </section>  <!-- Clips Section -->  <section class="clips">
+    <h2>Ek Do Clips Apke Naam</h2>
+    <video src="clip1.mp4" autoplay muted loop controls></video>
+    <video src="clip2.mp4" autoplay muted loop controls></video>
+    <video src="clip3.mp4" autoplay muted loop controls></video>
+  </section>  <!-- Footer -->  <footer>
+    <p>Made with ❤️ for Pari by your friend</p>
+  </footer>  <!-- Confetti --><canvas id="confetti-canvas"></canvas>
 
-  <h2>Apki Kuch Khoobsurat Photuu</h2>
-  <div class="gallery">
-    <img src="assets/img1.jpg" alt="Image 1">
-    <img src="assets/img2.jpg" alt="Image 2">
-    <img src="assets/img3.jpg" alt="Image 3">
-  </div>
-
-  <h2>Ek Do Clips Apke Naam</h2>
-  <div class="clips">
-    <video autoplay loop muted playsinline>
-      <source src="assets/clip1.mp4" type="video/mp4">
-    </video>
-    <video autoplay loop muted playsinline>
-      <source src="assets/clip2.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+  <!-- Script -->  <script src="script.js"></script></body>
 </html>
