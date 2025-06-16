@@ -127,3 +127,35 @@ footer {
   z-index: 99999;
   pointer-events: none;
 }
+
+.sticky-note {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 999;
+  background: transparent;
+  animation: float 4s ease-in-out infinite;
+}
+
+.note-inner {
+  background: #fff8a3;
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  max-width: 250px;
+  line-height: 1.5;
+  border: 2px dashed #ff8c00;
+  transform: rotate(-2deg);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
