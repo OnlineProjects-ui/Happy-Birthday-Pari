@@ -1,32 +1,24 @@
-function openModal() {
-  const modal = document.getElementById("videoModal");
-  const video = document.getElementById("mainVideo");
+// Modal video functionality
+const modal = document.getElementById("video-modal");
+const video = document.getElementById("main-video");
+const btn = document.getElementById("play-button");
+const span = document.querySelector(".close");
 
-  modal.style.display = "flex";
-  video.currentTime = 0;
+btn.addEventListener("click", () => {
+  modal.style.display = "block";
+  video.play();
+});
 
-  video.play().catch((err) => {
-    console.warn("Autoplay failed, muting video.", err);
-    video.muted = true;
-    video.play();
-  });
-}
-
-function closeModal() {
-  const modal = document.getElementById("videoModal");
-  const video = document.getElementById("mainVideo");
-
+span.addEventListener("click", () => {
   modal.style.display = "none";
   video.pause();
   video.currentTime = 0;
-}
+});
 
-// Autoplay all clips
-document.querySelectorAll(".clips video").forEach((clip) => {
-  clip.loop = true;
-  clip.muted = true;
-  clip.play().catch(() => {
-    clip.muted = true;
-    clip.play();
-  });
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+    video.pause();
+    video.currentTime = 0;
+  }
 });
