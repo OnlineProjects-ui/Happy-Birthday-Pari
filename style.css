@@ -1,130 +1,160 @@
+/* Background Stars Animation */
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: black;
-  color: white;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0d0d0d;
+  color: #fff;
   overflow-x: hidden;
 }
 
 .stars {
-  background: url('https://i.ibb.co/yP4ZCkz/stars.gif') repeat;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.ibb.co/1MRc5n4/stars.png') repeat;
   z-index: -1;
+  animation: starScroll 60s linear infinite;
 }
 
+@keyframes starScroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 10000px 5000px; }
+}
+
+/* Sticky Note */
 .sticky-note {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: #fff8b5;
+  background: #fff8c6;
   color: #000;
-  padding: 15px;
+  padding: 1rem;
+  margin: 1rem;
   border-radius: 10px;
-  font-weight: bold;
-  max-width: 250px;
+  max-width: 280px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  font-size: 1rem;
 }
 
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 5rem 1rem 3rem;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
   font-size: 1.3rem;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .play-btn {
-  background: #ff4da6;
-  color: white;
+  background-color: #ff4da6;
   border: none;
-  padding: 12px 24px;
-  border-radius: 25px;
+  padding: 0.9rem 2rem;
+  color: #fff;
   font-size: 1rem;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 .play-btn:hover {
-  background: #ff3385;
+  background-color: #e60073;
 }
 
+/* Modal */
 .modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  padding-top: 50px;
   left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .modal video {
-  display: block;
   max-width: 90%;
-  margin: auto;
-  border-radius: 20px;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
 }
 
 .close {
   position: absolute;
-  top: 20px;
-  right: 35px;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
   color: #fff;
-  font-size: 40px;
   cursor: pointer;
 }
 
+/* Gallery Section */
 .gallery {
-  padding: 40px 20px;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
 .gallery h2 {
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .gallery-content {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .gallery-content img {
-  width: 220px;
-  height: auto;
-  border-radius: 12px;
+  width: 240px;
+  height: 160px;
   object-fit: cover;
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
+/* Clips Section */
 .clips {
   display: flex;
   justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
-  padding: 30px 10px;
+  gap: 1rem;
+  padding: 2rem 1rem;
 }
 
 .clips video {
-  width: 250px;
-  height: 400px;
-  border-radius: 20px;
+  width: 220px;
+  height: 300px;
   object-fit: cover;
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
+/* Footer */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 2rem 1rem;
   font-size: 0.9rem;
+  background-color: #111;
   color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .gallery-content img,
+  .clips video {
+    width: 90%;
+    height: auto;
+  }
+
+  .modal video {
+    width: 100%;
+  }
 }
