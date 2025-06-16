@@ -29,7 +29,7 @@
 <!-- Modal for Main Video -->
 <div id="videoModal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
-  <video id="mainVideo" controls>
+  <video id="mainVideo" controls autoplay>
     <source src="main.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
@@ -38,7 +38,7 @@
 <!-- Gallery Section -->
 <section class="gallery">
   <h2>Some Memories Together</h2>
-  <div class="gallery-content">
+  <div class="gallery-grid">
     <img src="img1.jpg" alt="Image 1" />
     <img src="img2.jpg" alt="Image 2" />
     <img src="img3.jpg" alt="Image 3" />
@@ -46,10 +46,13 @@
 </section>
 
 <!-- Clips Section -->
-<section class="clips">
-  <video src="clip1.mp4" autoplay muted loop></video>
-  <video src="clip2.mp4" autoplay muted loop></video>
-  <video src="clip3.mp4" autoplay muted loop></video>
+<section class="gallery">
+  <h2>Throwback Clips</h2>
+  <div class="gallery-grid">
+    <video src="clip1.mp4" autoplay muted loop></video>
+    <video src="clip2.mp4" autoplay muted loop></video>
+    <video src="clip3.mp4" autoplay muted loop></video>
+  </div>
 </section>
 
 <!-- Footer -->
