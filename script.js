@@ -1,34 +1,25 @@
-// Main video modal logic
-const modal = document.getElementById("videoModal");
-const video = document.getElementById("mainVideo");
-const btn = document.querySelector(".play-btn");
-const span = document.querySelector(".close");
+const modal = document.getElementById("video-modal");
+const video = document.getElementById("main-video");
+const btn = document.getElementById("play-button");
+const closeBtn = document.getElementById("close-modal");
 
-btn.addEventListener("click", () => {
-  modal.style.display = "flex";
+// Open Modal & Play Video
+btn.onclick = () => {
+  modal.style.display = "block";
   video.currentTime = 0;
   video.play();
-});
+};
 
-span.addEventListener("click", () => {
+// Close Modal
+closeBtn.onclick = () => {
   modal.style.display = "none";
   video.pause();
-  video.currentTime = 0;
-});
+};
 
-window.addEventListener("click", (event) => {
+// Click outside to close
+window.onclick = (event) => {
   if (event.target === modal) {
     modal.style.display = "none";
     video.pause();
-    video.currentTime = 0;
   }
-});
-
-// Ensure clips autoplay, muted, loop
-document.querySelectorAll(".clips video").forEach((clip) => {
-  clip.loop = true;
-  clip.muted = true;
-  clip.autoplay = true;
-  clip.playsInline = true;
-  clip.play().catch(() => {});
-});
+};
