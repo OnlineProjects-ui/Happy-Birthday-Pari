@@ -1,190 +1,52 @@
-/* style.css - Gen Z Aesthetic */
+/* style.css */
 
-/* Reset & Fonts */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #f8e1f4, #d2e5fa);
-  overflow-x: hidden;
-  color: #333;
-}
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f0f; color: white; overflow-x: hidden; scroll-behavior: smooth; }
 
-/* Background Stars */
-.stars::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: url('https://i.imgur.com/8F9EikA.png') repeat;
-  z-index: -1;
-  opacity: 0.3;
-  animation: twinkle 50s linear infinite;
-}
+.stars { background: url('stars.gif') repeat; position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; opacity: 0.3; }
 
-@keyframes twinkle {
-  from { background-position: 0 0; }
-  to { background-position: 10000px 10000px; }
-}
+.sticky-note { background: #fffacd; color: #333; padding: 1rem; position: fixed; top: 1rem; left: 1rem; border-radius: 10px; font-size: 1rem; max-width: 250px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 999; animation: slideIn 1s ease-out forwards; }
 
-/* Sticky Note */
-.sticky-note {
-  background: #fffbe7;
-  border: 2px dashed #f5b1b1;
-  padding: 1rem;
-  width: fit-content;
-  max-width: 80%;
-  margin: 1.5rem auto;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
-  font-size: 1rem;
-  color: #444;
-}
+@keyframes slideIn { from { transform: translateX(-200px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 3rem 1rem;
-  color: #6d28d9;
-}
+.hero { text-align: center; margin-top: 6rem; padding: 2rem; animation: fadeIn 1.5s ease-in; }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 5px #fff;
-}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-.subtitle {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
+.hero h1 { font-size: 3rem; color: #ff7af5; animation: bounce 2s infinite; }
 
-.play-btn {
-  padding: 0.75rem 1.5rem;
-  background: #a855f7;
-  color: white;
-  border: none;
-  border-radius: 9999px;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 0 0 10px #a855f7;
-  transition: transform 0.2s;
-}
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-.play-btn:hover {
-  transform: scale(1.05);
-}
+.subtitle { font-size: 1.2rem; margin: 1rem 0; color: #ddd; }
 
-/* Modal Styling */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-}
+.play-btn { padding: 1rem 2rem; background: linear-gradient(135deg, #ff7af5, #ff48e1); border: none; border-radius: 30px; font-size: 1rem; color: white; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 72, 225, 0.4); transition: transform 0.2s, box-shadow 0.2s; }
 
-.modal .close {
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-}
+.play-btn:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(255, 72, 225, 0.6); }
 
-#mainVideo {
-  width: 90%;
-  max-height: 80vh;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px #fff;
-}
+.modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center; }
 
-/* Gallery */
-.gallery {
-  padding: 2rem;
-  text-align: center;
-}
+.modal video { width: 90%; max-width: 720px; border-radius: 12px; box-shadow: 0 0 25px rgba(255,255,255,0.1); }
 
-.gallery h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #4c1d95;
-}
+.close { position: absolute; top: 1rem; right: 1rem; font-size: 2rem; color: white; cursor: pointer; }
 
-.gallery-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
+.gallery { padding: 3rem 1rem; text-align: center; background: #1a1a1a; border-top: 1px solid #333; }
 
-.gallery-content img {
-  width: 200px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
-}
+.gallery h2 { font-size: 2.2rem; margin-bottom: 1.5rem; color: #ffbbf7; }
 
-.gallery-content img:hover {
-  transform: scale(1.05);
-}
+.gallery-content { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
-/* Clips */
-.clips {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 2rem;
-}
+.gallery-content img { width: 250px; height: 350px; object-fit: cover; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
 
-.clips video {
-  width: 250px;
-  height: 400px;
-  border-radius: 1rem;
-  object-fit: cover;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
+.gallery-content img:hover { transform: scale(1.05); }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 1rem;
-  color: #6b21a8;
-}
+.clips { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; padding: 2rem; background: #111; }
 
-/* Confetti Canvas */
-#confetti-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-}
+.clips video { width: 280px; height: 500px; object-fit: cover; border-radius: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .clips video,
-  .gallery-content img {
-    width: 90vw;
-    height: auto;
-  }
+.clips video:hover { transform: scale(1.05); }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
-}
+footer { text-align: center; padding: 2rem; color: #999; font-size: 0.9rem; background: #0f0f0f; border-top: 1px solid #222; }
+
+canvas#confetti-canvas { position: fixed; top: 0; left: 0; pointer-events: none; width: 100%; height: 100%; z-index: 1; }
+
+/* Responsive */ @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .clips video, .gallery-content img { width: 90vw; height: auto; } }
+
