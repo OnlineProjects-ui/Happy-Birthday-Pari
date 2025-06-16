@@ -7,53 +7,52 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <!-- Stars Animation -->
+  <div class="stars"></div>
+
   <!-- Background Music -->
   <audio id="bg-music" autoplay loop>
     <source src="background_music.mp3" type="audio/mpeg" />
   </audio>
 
-  <!-- Stars Animation -->
-  <div class="stars"></div>
-
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Happy 18th Birthday, Pari! 🎂🎉</h1>
+    <h1>Happy 18th Birthday, Pari! 🎂</h1>
     <p class="tagline">Wishing you joy, sparkle, and endless smiles!</p>
     <button id="play-button">Click Me for a Surprise 🎁</button>
   </section>
 
-  <!-- Sticky Note Message -->
+  <!-- Sticky Note -->
   <div class="sticky-note">
     <p>“Pichli baar nhi Dali thi uske liye sorry, iss bar uski kasar nikal di 😅”</p>
   </div>
 
-  <!-- Modal for Main Video -->
+  <!-- Hidden Main Video Modal -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <video id="main-video" controls>
         <source src="main.mp4" type="video/mp4"/>
-        Your browser does not support the video tag.
       </video>
     </div>
   </div>
 
-  <!-- Image & Clip Gallery -->
+  <!-- Memories Gallery -->
   <section class="gallery">
-    <h2>Memories Together 🎞️</h2>
+    <h2>Our Sweet Memories 💕</h2>
     <div class="gallery-grid">
-      <img src="img1.jpg" alt="Pari Photo 1"/>
-      <img src="img2.jpg" alt="Pari Photo 2"/>
-      <img src="img3.jpg" alt="Pari Photo 3"/>
-      <video src="clip1.mp4" autoplay loop muted></video>
-      <video src="clip2.mp4" autoplay loop muted></video>
-      <video src="clip3.mp4" autoplay loop muted></video>
+      <img src="img1.jpg" alt="Pic 1">
+      <img src="img2.jpg" alt="Pic 2">
+      <img src="img3.jpg" alt="Pic 3">
+      <video src="clip1.mp4" autoplay muted loop></video>
+      <video src="clip2.mp4" autoplay muted loop></video>
+      <video src="clip3.mp4" autoplay muted loop></video>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>Made with ❤️ by your friend</p>
+    <p>With love ❤️ – Your friend</p>
   </footer>
 
   <script src="script.js"></script>
