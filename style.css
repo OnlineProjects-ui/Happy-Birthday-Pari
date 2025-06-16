@@ -1,160 +1,113 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fdf6f0;
-  color: #333;
-  line-height: 1.6;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0e0e0e;
+  color: #fff;
   overflow-x: hidden;
 }
 
-/* Sticky Note */
 .sticky-note {
-  background-color: #fffec8;
-  padding: 20px;
-  max-width: 300px;
-  margin: 20px auto;
-  font-style: italic;
-  border: 2px dashed #f5c518;
+  background: #fff3cd;
+  color: #212529;
+  padding: 1em;
+  border: 2px dashed #ffc107;
+  width: fit-content;
+  margin: 1em auto;
+  text-align: center;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
 }
 
-/* Hero Section */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to bottom, #ffe4e1, #fff);
+  padding: 3em 1em;
+  background: linear-gradient(to bottom, #ff758c, #ff7eb3);
 }
 
 .hero h1 {
-  font-size: 2.8rem;
-  color: #e91e63;
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
 }
 
 .hero .subtitle {
-  margin-top: 10px;
   font-size: 1.2rem;
-  color: #555;
+  margin-bottom: 1em;
 }
 
 .play-btn {
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  background-color: #ff4081;
-  color: white;
+  background: #fff;
   border: none;
-  border-radius: 8px;
+  color: #ff4081;
+  padding: 0.8em 1.5em;
+  font-size: 1rem;
+  border-radius: 25px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
 .play-btn:hover {
-  background-color: #e91e63;
+  background: #f8f8f8;
 }
 
-/* Modal */
+.gallery {
+  padding: 2em 1em;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin-bottom: 1em;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 0 1em;
+}
+
+.gallery-grid img,
+.gallery-grid video {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+footer {
+  text-align: center;
+  padding: 2em 1em;
+  background: #1c1c1c;
+  font-size: 1rem;
+  color: #aaa;
+}
+
 .modal {
   display: none;
   position: fixed;
   z-index: 999;
-  padding-top: 50px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0,0,0,0.9);
 }
 
 .modal video {
-  display: block;
   max-width: 90%;
-  margin: auto;
-  border-radius: 12px;
+  max-height: 80%;
+  margin: 5% auto;
+  display: block;
+  border-radius: 10px;
 }
 
 .close {
   position: absolute;
   top: 20px;
   right: 35px;
-  color: white;
-  font-size: 2.5rem;
+  color: #fff;
+  font-size: 40px;
   font-weight: bold;
   cursor: pointer;
 }
-
-/* Gallery Section */
-.gallery {
-  padding: 40px 20px;
-  text-align: center;
-  background: #fffaf0;
-}
-
-.gallery h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #e91e63;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 10px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.gallery-grid img,
-.gallery-grid video {
-  width: 100%;
-  max-width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Clips Section */
-.clips {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  background: #fff0f6;
-  padding: 40px 10px;
-}
-
-.clips video {
-  width: 100%;
-  max-width: 300px;
-  height: 200px;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Footer */
-footer {
-  background: #ffe4e1;
-  text-align: center;
-  padding: 15px;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-/* Confetti Canvas */
-#confetti-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  }
