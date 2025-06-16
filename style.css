@@ -131,12 +131,11 @@ footer {
 /* === Sticky Note Box (Gen Z Style) === */
 .sticky-note {
   position: fixed;
-  top: 30px;
+  bottom: 30px;
   left: 30px;
   z-index: 999;
-  background: transparent;
-  animation: float 4s ease-in-out infinite;
-}
+  /* rest of the styles... */
+  }
 
 .note-inner {
   background: #fff8a3;
