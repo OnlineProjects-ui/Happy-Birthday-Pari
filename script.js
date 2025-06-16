@@ -1,49 +1,39 @@
-// Surprise Video Popup
-const playBtn = document.getElementById("playVideo");
-const videoPopup = document.getElementById("videoPopup");
-const closePopup = document.getElementById("closePopup");
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById("myModal");
+  const btn = document.getElementById("playButton");
+  const span = document.getElementsByClassName("close")[0];
+  const mainVideo = document.getElementById("mainVideo");
+  const backgroundMusic = document.getElementById("backgroundMusic");
 
-playBtn.addEventListener("click", () => {
-  videoPopup.style.display = "flex";
-});
+  // Play main video on button click
+  btn.onclick = function () {
+    modal.style.display = "flex";
+    mainVideo.play();
+    backgroundMusic.pause();
+  };
 
-closePopup.addEventListener("click", () => {
-  videoPopup.style.display = "none";
-  const video = videoPopup.querySelector("video");
-  video.pause();
-  video.currentTime = 0;
-});
+  // Close modal on X
+  span.onclick = function () {
+    modal.style.display = "none";
+    mainVideo.pause();
+    mainVideo.currentTime = 0;
+    backgroundMusic.play();
+  };
 
-// Confetti Generator
-function createConfetti() {
-  const confetti = document.createElement("div");
-  confetti.classList.add("confetti");
-  confetti.style.left = `${Math.random() * 100}vw`;
-  confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 70%)`;
-  confetti.style.animationDuration = `${Math.random() * 2 + 3}s`;
-  document.body.appendChild(confetti);
-
-  setTimeout(() => {
-    confetti.remove();
-  }, 5000);
-}
-setInterval(createConfetti, 150);
-
-// Reveal Animation for Images
-const galleryImages = document.querySelectorAll(".gallery img");
-window.addEventListener("scroll", () => {
-  galleryImages.forEach((img) => {
-    const rect = img.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      img.classList.add("reveal");
+  // Close modal if clicked outside the video
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      mainVideo.pause();
+      mainVideo.currentTime = 0;
+      backgroundMusic.play();
     }
+  };
+
+  // Start background music
+  backgroundMusic.volume = 0.5;
+  backgroundMusic.play().catch(() => {
+    // Autoplay might be blocked; wait for user interaction
+    document.addEventListener('click', () => backgroundMusic.play(), { once: true });
   });
 });
-
-// Background Music
-const music = new Audio("song.mp3");
-music.loop = true;
-music.volume = 0.5;
-document.addEventListener("click", () => {
-  if (music.paused) music.play();
-}, { once: true });
