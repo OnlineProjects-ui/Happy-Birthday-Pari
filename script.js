@@ -1,8 +1,24 @@
-// Modal functionality for the main birthday video
-const modal = document.getElementById("videoModal");
-const video = document.getElementById("mainVideo");
-const playBtn = document.querySelector(".play-btn");
+const modal = document.getElementById("video-modal");
+const video = document.getElementById("main-video");
+const playBtn = document.getElementById("play-button");
 const closeBtn = document.querySelector(".close");
 
-// Open modal and play video
-playBtn.addEventListener("click", ()
+playBtn.onclick = () => {
+  modal.style.display = "flex";
+  video.currentTime = 0;
+  video.play();
+};
+
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+  video.pause();
+  video.currentTime = 0;
+};
+
+window.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    video.pause();
+    video.currentTime = 0;
+  }
+};
