@@ -3,42 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy 18th Birthday Pari 🎉</title>
+  <title>Happy 18th Birthday Pari 🎂</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <div class="confetti"></div>
+
   <header>
-    <h1>🎂 Happy 18th Birthday Pari! 🎉</h1>
-    <p class="note">Pichli baar nahi daali thi uske liye sorry... Iss baar uski kasar nikaal di! 💖</p>
+    <h1>🎉 Happy 18th Birthday Pari! 🎉</h1>
+    <p class="cute-note">Pichli baar nahi dali thi... uske liye sorry 💌<br>Is baar uski kasar nikaal di 😄💖</p>
   </header>
 
-  <!-- Surprise Video Button -->
-  <button id="playVideo" class="surprise-btn">🎁 Tap Here for a Surprise</button>
-
-  <!-- Decorative Gallery -->
-  <section class="gallery">
-    <img src="img1.jpg" alt="Pari 1" />
-    <img src="img2.jpg" alt="Pari 2" />
-    <img src="img3.jpg" alt="Pari 3" />
-  </section>
-
-  <!-- Decorative Videos Strip -->
-  <section class="video-strip">
-    <video src="clip1.mp4" autoplay muted loop></video>
-    <video src="clip2.mp4" autoplay muted loop></video>
-    <video src="clip3.mp4" autoplay muted loop></video>
-  </section>
-
-  <!-- Hidden Video Popup -->
-  <div id="videoPopup" class="video-popup">
-    <span id="closePopup">&times;</span>
-    <video src="main.mp4" controls autoplay></video>
+  <div class="video-button-container">
+    <button id="playButton">🎥 Tap Here for a Surprise Video</button>
   </div>
 
-  <!-- Background Music -->
-  <!-- Audio will be triggered via script.js -->
+  <!-- Modal for main video -->
+  <div id="videoModal" class="modal">
+    <span class="close" id="closeBtn">&times;</span>
+    <video controls autoplay id="mainVideo">
+      <source src="main.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Image Gallery -->
+  <section class="gallery">
+    <h2>✨ Memories with Pari ✨</h2>
+    <div class="gallery-row">
+      <img src="img1.jpg" alt="Pari 1">
+      <img src="img2.jpg" alt="Pari 2">
+      <img src="img3.jpg" alt="Pari 3">
+    </div>
+    
+    <div class="clip-row">
+      <video src="clip1.mp4" controls muted></video>
+      <video src="clip2.mp4" controls muted></video>
+      <video src="clip3.mp4" controls muted></video>
+    </div>
+  </section>
+
+  <!-- Background music -->
+  <audio id="bgMusic" loop>
+    <source src="background_music.mp3" type="audio/mp3">
+  </audio>
 
   <script src="script.js"></script>
 </body>
