@@ -1,18 +1,21 @@
-// Modal video functionality
-const modal = document.getElementById("video-modal");
-const video = document.getElementById("main-video");
-const btn = document.getElementById("play-button");
-const span = document.querySelector(".close");
+// Modal functionality for the main birthday video
+const modal = document.getElementById("videoModal");
+const video = document.getElementById("mainVideo");
+const playBtn = document.querySelector(".play-btn");
+const closeBtn = document.querySelector(".close");
 
-btn.addEventListener("click", () => {
-  modal.style.display = "block";
+playBtn.addEventListener("click", () => {
+  modal.style.display = "flex";
+  video.currentTime = 0;
   video.play();
+  video.setAttribute("controls", true);
 });
 
-span.addEventListener("click", () => {
+closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
   video.pause();
   video.currentTime = 0;
+  video.removeAttribute("controls");
 });
 
 window.addEventListener("click", (event) => {
@@ -20,5 +23,13 @@ window.addEventListener("click", (event) => {
     modal.style.display = "none";
     video.pause();
     video.currentTime = 0;
+    video.removeAttribute("controls");
   }
+});
+
+// Autoplay clips
+document.querySelectorAll(".clips video").forEach((clip) => {
+  clip.loop = true;
+  clip.muted = true;
+  clip.play();
 });
