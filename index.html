@@ -3,55 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Pari</title>
+  <title>Happy Birthday Pari!</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="note">Pichli baar nhi dali thi uske liye sorry<br>iss baar uski kasar nikal di 🥺</div>
 
-<div class="stars"></div>
-
-<audio id="bg-music" src="assets/birthday_music.mp3" autoplay loop></audio>
-
-<div class="sticky-note">
-  <p>Pichli baar nhi dali thi uske liye sorry<br>iss baar uski kasar nikal di 🥹</p>
-</div>
-
-<section class="hero">
   <h1>Happy 18th Birthday, Pari! 🎉</h1>
-  <p class="subtitle">This day is all yours... 💖</p>
-  <button class="play-btn" id="play-button">Click for a Surprise!</button>
-</section>
+  <p>This day is all yours... 💖</p>
+  <button id="openModal">Click for a Surprise!</button>
 
-<!-- Modal -->
-<div id="video-modal" class="modal">
-  <span class="close">&times;</span>
-  <video id="main-video" controls>
-    <source src="assets/main.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-<section class="gallery">
-  <h2>Apki Kuch Khoobsurat Photuu</h2>
-  <div class="gallery-grid">
-    <img src="assets/img1.jpg" alt="Image 1" />
-    <img src="assets/img2.jpg" alt="Image 2" />
-    <img src="assets/img3.jpg" alt="Image 3" />
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <video id="surpriseVideo" controls autoplay muted>
+        <source src="assets/video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
-</section>
 
-<section class="clips">
-  <video src="assets/clip1.mp4" autoplay muted loop></video>
-  <video src="assets/clip2.mp4" autoplay muted loop></video>
-  <video src="assets/clip3.mp4" autoplay muted loop></video>
-</section>
+  <h2>Apki Kuch Khoobsurat Photuu</h2>
+  <div class="gallery">
+    <img src="assets/gallery1.jpg" alt="Image 1">
+    <img src="assets/gallery2.jpg" alt="Image 2">
+    <img src="assets/gallery3.jpg" alt="Image 3">
+  </div>
 
-<footer>
-  <p>Made with ❤️ for Pari by your Mitra</p>
-</footer>
+  <h2>Ek Do Clips Apke Naam</h2>
+  <div class="clips">
+    <video autoplay loop muted playsinline>
+      <source src="assets/clip1.mp4" type="video/mp4">
+    </video>
+    <video autoplay loop muted playsinline>
+      <source src="assets/clip2.mp4" type="video/mp4">
+    </video>
+  </div>
 
-<canvas id="confetti-canvas"></canvas>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
