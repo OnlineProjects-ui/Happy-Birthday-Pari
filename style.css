@@ -1,160 +1,149 @@
-/* Background Stars Animation */
-body {
+/* Reset and basic styles */
+body, html {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: #0d0d0d;
-  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  background: #00BFFF;
+  color: white;
   overflow-x: hidden;
 }
 
+/* Stars background */
 .stars {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://i.ibb.co/1MRc5n4/stars.png') repeat;
+  background: transparent url('https://i.ibb.co/T8dR0yK/star-bg.gif') repeat;
   z-index: -1;
-  animation: starScroll 60s linear infinite;
+  opacity: 0.1;
 }
 
-@keyframes starScroll {
-  0% { background-position: 0 0; }
-  100% { background-position: 10000px 5000px; }
-}
-
-/* Sticky Note */
+/* Sticky note */
 .sticky-note {
-  background: #fff8c6;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff59d;
   color: #000;
-  padding: 1rem;
-  margin: 1rem;
-  border-radius: 10px;
-  max-width: 280px;
+  padding: 15px 25px;
+  border-radius: 15px;
+  font-weight: bold;
+  max-width: 90%;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-  font-size: 1rem;
 }
 
-/* Hero Section */
+/* Hero section */
 .hero {
   text-align: center;
-  padding: 5rem 1rem 3rem;
+  padding: 80px 20px 50px;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 0.5em;
 }
 
 .subtitle {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 1em;
 }
 
 .play-btn {
-  background-color: #ff4da6;
+  background: #ff4081;
+  color: white;
+  padding: 12px 24px;
   border: none;
-  padding: 0.9rem 2rem;
-  color: #fff;
+  border-radius: 30px;
   font-size: 1rem;
-  border-radius: 25px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 
 .play-btn:hover {
-  background-color: #e60073;
+  background: #f50057;
 }
 
 /* Modal */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
-  background-color: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
+  z-index: 10;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
 }
 
 .modal video {
+  display: block;
   max-width: 90%;
   max-height: 80vh;
+  margin: auto;
   border-radius: 10px;
-  box-shadow: 0 0 20px #000;
 }
 
 .close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  color: #fff;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-/* Gallery Section */
+/* Gallery section */
 .gallery {
-  padding: 2rem 1rem;
+  padding: 50px 20px;
   text-align: center;
 }
 
 .gallery h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 }
 
 .gallery-content {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .gallery-content img {
-  width: 240px;
-  height: 160px;
-  object-fit: cover;
+  max-width: 300px;
+  width: 90%;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Clips Section */
+/* Clips */
 .clips {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 2rem 1rem;
+  gap: 10px;
+  padding: 30px 15px;
 }
 
 .clips video {
-  width: 220px;
-  height: 300px;
+  width: 300px;
+  height: 500px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 30px;
+  background-color: rgba(0,0,0,0.1);
   font-size: 0.9rem;
-  background-color: #111;
-  color: #aaa;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .gallery-content img,
-  .clips video {
-    width: 90%;
-    height: auto;
-  }
-
-  .modal video {
-    width: 100%;
-  }
 }
