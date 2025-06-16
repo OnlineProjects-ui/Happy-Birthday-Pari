@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background: linear-gradient(120deg, #ffe0ec, #fff7f0);
+  overflow-x: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.container {
+  padding: 30px 10px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #ff007f;
+  text-shadow: 2px 2px 5px #ffb6c1;
+  animation: popUp 1.2s ease-out forwards;
+}
+
+.msg {
+  color: #6a1b9a;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.gallery img,
+.gallery video.bg-video {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: float 4s ease-in-out infinite;
+}
+
+.play-btn {
+  background: #ff007f;
+  color: white;
+  padding: 15px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  animation: popUp 1s ease-out forwards;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+}
+
+.video-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 720px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  z-index: 9999;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.video-popup video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.video-popup button {
+  margin-top: 10px;
+  background-color: #ff007f;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+canvas#confetti-canvas {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes popUp {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
