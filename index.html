@@ -1,38 +1,66 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Birthday Pari</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body><!-- Background Stars --><div class="stars"></div><!-- Background Music --><audio id="bg-music" src="birthday_music.mp3" autoplay loop></audio>
+<body>
 
-<!-- Sticky Note --><div class="sticky-note">
+<!-- Background Stars -->
+<div class="stars"></div>
+
+<!-- Background Music -->
+<audio id="bg-music" src="birthday_music.mp3" autoplay loop></audio>
+
+<!-- Sticky Note -->
+<div class="sticky-note">
   <p>Pichli baar nhi dali thi uske liye sorry<br>iss baar uski kasar nikal di 🥹</p>
-</div><!-- Hero Section --><section class="hero">
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
   <h1>Happy 18th Birthday, Pari! 🎉</h1>
   <p class="subtitle">This day is all yours... 💖</p>
-  <button class="play-btn" id="play-button">Click for a Surprise!</button>
-</section><!-- Modal for Main Video --><div id="video-modal" class="modal">
-  <span class="close">&times;</span>
-  <video id="main-video">
+  <button class="play-btn" onclick="openModal()">Click for a Surprise!</button>
+</section>
+
+<!-- Modal for Main Video -->
+<div id="videoModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <video id="mainVideo" preload="auto">
     <source src="main.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
-</div><!-- Gallery Section --><section class="gallery">
-  <h2>Apki Kuch Khoobsurat Photu</h2>
+</div>
+
+<!-- Gallery Section -->
+<section class="gallery">
+  <h2>Some Memories Together</h2>
   <div class="gallery-content">
     <img src="img1.jpg" alt="Image 1" />
     <img src="img2.jpg" alt="Image 2" />
     <img src="img3.jpg" alt="Image 3" />
   </div>
-</section><!-- Clips Section --><section class="clips">
+</section>
+
+<!-- Clips Section -->
+<section class="clips">
   <video src="clip1.mp4" autoplay muted loop></video>
   <video src="clip2.mp4" autoplay muted loop></video>
   <video src="clip3.mp4" autoplay muted loop></video>
-</section><!-- Footer --><footer>
-  <p>Made with ❤️ for Pari by your Mitra</p>
-</footer><!-- Confetti --><canvas id="confetti-canvas"></canvas>
+</section>
 
-<!-- Script --><script src="script.js"></script></body>
+<!-- Footer -->
+<footer>
+  <p>Made with ❤️ for Pari by your friend</p>
+</footer>
+
+<!-- Confetti -->
+<canvas id="confetti-canvas"></canvas>
+
+<!-- Script -->
+<script src="script.js"></script>
+</body>
 </html>
