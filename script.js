@@ -1,8 +1,8 @@
 // Modal functionality for the main birthday video
-const modal = document.getElementById("video-modal");
-const video = document.getElementById("main-video");
-const btn = document.getElementById("play-button");
-const span = document.getElementsByClassName("close")[0];
+const modal = document.getElementById("videoModal");
+const video = document.getElementById("mainVideo");
+const btn = document.querySelector(".play-btn");
+const closeBtn = document.querySelector(".close");
 
 btn.onclick = function () {
   modal.style.display = "block";
@@ -10,7 +10,7 @@ btn.onclick = function () {
   video.setAttribute("controls", true);
 };
 
-span.onclick = function () {
+closeBtn.onclick = function () {
   modal.style.display = "none";
   video.pause();
   video.currentTime = 0;
@@ -26,9 +26,9 @@ window.onclick = function (event) {
   }
 };
 
-// Loop all gallery videos
+// Loop all clips in the gallery
 document.querySelectorAll(".gallery-grid video").forEach((clip) => {
   clip.loop = true;
   clip.muted = true;
-  clip.play();
+  clip.play().catch(() => {});
 });
