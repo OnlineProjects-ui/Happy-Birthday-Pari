@@ -1,160 +1,144 @@
-/* Reset & Basics */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
 body {
-  background-color: #0e0e0e;
-  color: white;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
   overflow-x: hidden;
-  position: relative;
 }
 
 /* Background Stars */
 .stars {
+  background: url('stars.png') repeat top center;
   position: fixed;
   width: 100%;
   height: 100%;
-  background: url('https://i.ibb.co/WksYdjc/stars.png') repeat;
-  z-index: 0;
-  animation: twinkling 20s linear infinite;
+  z-index: -1;
+  animation: twinkle 20s linear infinite;
 }
 
-@keyframes twinkling {
+@keyframes twinkle {
   0% { background-position: 0 0; }
-  100% { background-position: -10000px 5000px; }
+  100% { background-position: 1000px 1000px; }
 }
 
 /* Sticky Note */
 .sticky-note {
+  background: #fffae3;
+  color: #222;
+  padding: 15px 20px;
+  border: 2px dashed #ffb703;
   position: absolute;
-  top: 30px;
-  left: 30px;
-  background-color: #fffacd;
-  color: #000;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 16px;
+  top: 20px;
+  right: 20px;
+  max-width: 250px;
+  font-size: 14px;
+  box-shadow: 0 0 10px rgba(255, 183, 3, 0.5);
+  border-radius: 8px;
   z-index: 10;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Hero Section */
 .hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  z-index: 2;
-  position: relative;
-  padding: 0 20px;
+  padding: 100px 20px 60px;
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  color: #ffd700;
 }
 
 .subtitle {
   font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #ffb6c1;
+  margin-bottom: 20px;
 }
 
 .play-btn {
-  background: #ff69b4;
-  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: #ff4d6d;
+  color: #fff;
   border: none;
-  padding: 12px 25px;
-  font-size: 16px;
-  border-radius: 30px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background 0.3s ease;
-  z-index: 10;
+  transition: 0.3s ease;
 }
 
 .play-btn:hover {
-  background: #ff85c1;
+  background: #ff1c4d;
 }
 
 /* Modal */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   background-color: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  z-index: 9999;
 }
 
 .modal video {
   width: 90%;
   max-width: 720px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .close {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 30px;
+  right: 40px;
   font-size: 40px;
   color: white;
   cursor: pointer;
-  z-index: 1001;
 }
 
-/* Gallery Section */
+/* Gallery */
 .gallery {
+  padding: 40px 20px;
   text-align: center;
-  padding: 50px 20px;
 }
 
 .gallery h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  color: #ffd700;
 }
 
 .gallery-content {
   display: flex;
+  justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .gallery-content img {
-  width: 220px;
-  height: 300px;
+  width: 200px;
+  height: 250px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Clips Section */
 .clips {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px 20px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 30px 20px;
 }
 
 .clips video {
   width: 300px;
-  height: 200px;
-  border-radius: 15px;
+  height: 400px;
   object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 /* Footer */
@@ -162,17 +146,6 @@ footer {
   text-align: center;
   padding: 20px;
   background: #111;
-  color: #ccc;
+  color: #aaa;
   font-size: 14px;
-}
-
-/* Confetti Canvas */
-#confetti-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 5;
 }
