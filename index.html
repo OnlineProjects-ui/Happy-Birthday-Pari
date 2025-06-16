@@ -3,52 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy 18th Birthday Pari 🎂</title>
+  <title>Happy Birthday Pari 🎂</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="confetti"></div>
+  <audio id="backgroundMusic" src="background_music.mp3" autoplay loop></audio>
 
-  <header>
-    <h1>🎉 Happy 18th Birthday Pari! 🎉</h1>
-    <p class="cute-note">Pichli baar nahi dali thi... uske liye sorry 💌<br>Is baar uski kasar nikaal di 😄💖</p>
-  </header>
-
-  <div class="video-button-container">
-    <button id="playButton">🎥 Tap Here for a Surprise Video</button>
+  <div class="hero">
+    <h1>Happy 18th Birthday Pari 🎉</h1>
+    <p>Pichli baar nahi daali thi uske liye sorry, iss baar uski kasar nikaal di ❤️</p>
+    <button id="playButton">Click Me 🎥</button>
   </div>
 
-  <!-- Modal for main video -->
-  <div id="videoModal" class="modal">
-    <span class="close" id="closeBtn">&times;</span>
-    <video controls autoplay id="mainVideo">
+  <!-- Modal for Main Video -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <video id="mainVideo" controls>
       <source src="main.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
 
-  <!-- Image Gallery -->
-  <section class="gallery">
-    <h2>✨ Memories with Pari ✨</h2>
-    <div class="gallery-row">
+  <!-- Gallery Section -->
+  <div class="gallery">
+    <h2>Some Lovely Memories 💖</h2>
+    
+    <!-- Images -->
+    <div class="image-grid">
       <img src="img1.jpg" alt="Pari 1">
       <img src="img2.jpg" alt="Pari 2">
       <img src="img3.jpg" alt="Pari 3">
     </div>
-    
-    <div class="clip-row">
-      <video src="clip1.mp4" controls muted></video>
-      <video src="clip2.mp4" controls muted></video>
-      <video src="clip3.mp4" controls muted></video>
-    </div>
-  </section>
 
-  <!-- Background music -->
-  <audio id="bgMusic" loop>
-    <source src="background_music.mp3" type="audio/mp3">
-  </audio>
+    <!-- Clips -->
+    <div class="video-grid">
+      <video src="clip1.mp4" autoplay loop muted></video>
+      <video src="clip2.mp4" autoplay loop muted></video>
+      <video src="clip3.mp4" autoplay loop muted></video>
+    </div>
+  </div>
+
+  <canvas id="confetti-canvas"></canvas>
 
   <script src="script.js"></script>
 </body>
