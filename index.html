@@ -2,46 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy 18th Birthday Pari 🎉</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header>
-    <h1>Happy 18th Birthday Pari 🎂✨</h1>
-    <p class="sorry-note">Pichli baar nhi Dali thi uske liye sorry 😔 iss bar uski kasar nikal di 😄</p>
+    <h1>🎂 Happy 18th Birthday Pari! 🎉</h1>
+    <p class="note">Pichli baar nahi daali thi uske liye sorry... Iss baar uski kasar nikaal di! 💖</p>
   </header>
 
-  <!-- Short Clips -->
-  <div class="video-strip">
+  <!-- Surprise Video Button -->
+  <button id="playVideo" class="surprise-btn">🎁 Tap Here for a Surprise</button>
+
+  <!-- Decorative Gallery -->
+  <section class="gallery">
+    <img src="img1.jpg" alt="Pari 1" />
+    <img src="img2.jpg" alt="Pari 2" />
+    <img src="img3.jpg" alt="Pari 3" />
+  </section>
+
+  <!-- Decorative Videos Strip -->
+  <section class="video-strip">
     <video src="clip1.mp4" autoplay muted loop></video>
     <video src="clip2.mp4" autoplay muted loop></video>
     <video src="clip3.mp4" autoplay muted loop></video>
-  </div>
+  </section>
 
-  <!-- Image Gallery -->
-  <div class="gallery">
-    <img src="img1.jpg" alt="Pari Pic 1">
-    <img src="img2.jpg" alt="Pari Pic 2">
-    <img src="img3.jpg" alt="Pari Pic 3">
-  </div>
-
-  <!-- Main Video Button -->
-  <div class="btn-wrap">
-    <button id="playVideo">Click Here for a Surprise 🎁</button>
-  </div>
-
-  <!-- Video Popup -->
-  <div class="video-popup" id="videoPopup">
+  <!-- Hidden Video Popup -->
+  <div id="videoPopup" class="video-popup">
     <span id="closePopup">&times;</span>
     <video src="main.mp4" controls autoplay></video>
   </div>
 
-  <footer>
-    <p>With love, from your friend 💖</p>
-  </footer>
+  <!-- Background Music -->
+  <!-- Audio will be triggered via script.js -->
 
   <script src="script.js"></script>
 </body>
