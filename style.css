@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,58 +6,88 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: url('https://www.transparenttextures.com/patterns/stardust.png'), #fdf6f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fdf6f0;
   color: #333;
+  line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* Sticky Note */
+.sticky-note {
+  background-color: #fffec8;
+  padding: 20px;
+  max-width: 300px;
+  margin: 20px auto;
+  font-style: italic;
+  border: 2px dashed #f5c518;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
-  color: #fff;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #ffe4e1, #fff);
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  animation: fadeIn 2s ease-in-out;
+  font-size: 2.8rem;
+  color: #e91e63;
 }
 
-.tagline {
+.hero .subtitle {
+  margin-top: 10px;
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  color: #555;
 }
 
-button#play-button {
+.play-btn {
+  margin-top: 20px;
   padding: 12px 24px;
-  background-color: #ff69b4;
-  border: none;
-  color: #fff;
   font-size: 1rem;
-  border-radius: 30px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-button#play-button:hover {
-  transform: scale(1.1);
+.play-btn:hover {
+  background-color: #e91e63;
 }
 
-/* Sticky Note */
-.sticky-note {
-  width: 250px;
-  background-color: #fff3a8;
-  padding: 15px;
-  border: 2px dashed #ffaf00;
-  margin: 30px auto;
-  font-style: italic;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transform: rotate(-2deg);
-  animation: float 4s ease-in-out infinite;
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal video {
+  display: block;
+  max-width: 90%;
+  margin: auto;
+  border-radius: 12px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* Gallery Section */
@@ -70,11 +100,12 @@ button#play-button:hover {
 .gallery h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #e91e63;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 10px;
   max-width: 1200px;
@@ -84,80 +115,46 @@ button#play-button:hover {
 .gallery-grid img,
 .gallery-grid video {
   width: 100%;
+  max-width: 100%;
   height: 300px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
+/* Clips Section */
+.clips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background: #fff0f6;
+  padding: 40px 10px;
+}
+
+.clips video {
   width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
-}
-
-.modal-content {
-  position: relative;
-  margin: 80px auto;
-  width: 90%;
-  max-width: 700px;
-}
-
-.modal-content video {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
-.close {
-  position: absolute;
-  top: -30px;
-  right: 0;
-  font-size: 40px;
-  color: #fff;
-  cursor: pointer;
+  max-width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Footer */
 footer {
   background: #ffe4e1;
-  padding: 20px;
   text-align: center;
-  font-size: 1rem;
-  color: #444;
+  padding: 15px;
+  font-size: 0.95rem;
+  color: #333;
 }
 
-/* Floating Stars Background */
-.stars {
+/* Confetti Canvas */
+#confetti-canvas {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background: transparent url('https://i.ibb.co/7kYhKcw/star.png') repeat;
-  animation: animateStars 60s linear infinite;
+  top: 0;
+  left: 0;
   pointer-events: none;
-  z-index: 0;
-}
-
-/* Keyframes */
-@keyframes fadeIn {
-  0% {opacity: 0; transform: translateY(-20px);}
-  100% {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes float {
-  0% {transform: translateY(0);}
-  50% {transform: translateY(-10px);}
-  100% {transform: translateY(0);}
-}
-
-@keyframes animateStars {
-  0% {background-position: 0 0;}
-  100% {background-position: 1000px 1000px;}
-}
+  z-index: 9999;
+  }
