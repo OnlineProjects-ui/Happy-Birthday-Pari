@@ -1,115 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy 18th Birthday Pari 🎉</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Comic Sans MS", cursive, sans-serif;
-      background: linear-gradient(to top right, #ffe6f0, #ffd1dc);
-      overflow-x: hidden;
-    }
-    h1 {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 3em;
-      color: #ff1493;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ff69b4; }
-      to { text-shadow: 0 0 20px #ff1493; }
-    }
-    .sorry-note {
-      text-align: center;
-      font-size: 1.3em;
-      margin-top: 10px;
-      color: #555;
-      padding: 10px;
-      background: #fff8f9;
-      border: 2px dashed #ffb6c1;
-      display: inline-block;
-      border-radius: 15px;
-    }
-    .gallery {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 40px 10px;
-    }
-    .gallery img {
-      width: 200px;
-      border: 4px solid #ff69b4;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    .video-section {
-      text-align: center;
-      margin: 40px;
-    }
-    .video-section button {
-      background: #ff1493;
-      color: white;
-      font-size: 1.5em;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-    .hidden {
-      display: none;
-    }
-    .video-player {
-      margin-top: 20px;
-    }
-    audio {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Pari 🎂</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🎂 Happy 18th Birthday Pari! 🎉</h1>
-  <div class="sorry-note">
-    "Pichli baar nhi Dali thi uske liye sorry, iss baar uski kasar nikal di 😅🎉"
-  </div>
+  <div class="container">
+    <h1>Happy 18th Birthday Pari! 🎉</h1>
+    <p class="msg">Pichli baar nahi daali thi uske liye sorry... iss baar uski kasar nikal di 💖</p>
 
-  <div class="gallery">
-    <img src="images/photo1.jpg" alt="Pari 1" />
-    <img src="images/photo2.jpg" alt="Pari 2" />
-    <img src="images/photo3.jpg" alt="Pari 3" />
-  </div>
+    <div class="gallery">
+      <img src="img1.jpg" alt="Pari 1" />
+      <img src="img2.jpg" alt="Pari 2" />
+      <img src="img3.jpg" alt="Pari 3" />
+      
+      <video autoplay muted loop class="bg-video"><source src="clip1.mp4" type="video/mp4" /></video>
+      <video autoplay muted loop class="bg-video"><source src="clip2.mp4" type="video/mp4" /></video>
+      <video autoplay muted loop class="bg-video"><source src="clip3.mp4" type="video/mp4" /></video>
+    </div>
 
-  <div class="video-section">
-    <button onclick="showVideo()">Click Here for a Surprise 🎁</button>
-    <div class="video-player hidden" id="videoBox">
-      <video width="80%" controls autoplay>
-        <source src="video/main.mp4" type="video/mp4" />
+    <button class="play-btn" onclick="playVideo()">💝 Tap to Reveal Your Surprise 💝</button>
+
+    <div class="video-popup" id="videoPopup">
+      <video id="birthdayVideo" controls>
+        <source src="main.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <button onclick="closeVideo()">❌ Close</button>
     </div>
   </div>
 
-  <audio controls autoplay loop>
-    <source src="music/birthday_song.mp3" type="audio/mpeg">
+  <audio autoplay loop>
+    <source src="birthday_music.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
-  <script>
-    function showVideo() {
-      document.getElementById('videoBox').classList.remove('hidden');
-    }
-  </script>
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="script.js"></script>
 </body>
 </html>
