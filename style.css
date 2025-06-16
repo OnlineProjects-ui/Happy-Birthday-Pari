@@ -1,152 +1,105 @@
-/* General Reset */
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Pacifico', cursive;
-  background: linear-gradient(135deg, #ffe0ec, #fff4e6);
-  color: #4a004e;
-  padding-bottom: 100px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to bottom right, #ffe0f0, #ffffff);
   overflow-x: hidden;
 }
 
-/* Header */
-header {
+.hero {
   text-align: center;
-  padding: 40px 20px 20px;
+  padding: 60px 20px;
+  background: #fff4f9;
+  border-bottom: 3px solid #ff77b9;
 }
 
-h1 {
-  font-size: 2.8rem;
-  color: #ff4dae;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+.hero h1 {
+  font-size: 3em;
+  color: #ff3399;
+  animation: pop 1s ease-in-out;
 }
 
-.cute-note {
-  font-size: 1.2rem;
-  margin-top: 15px;
-  color: #d1006f;
+.hero p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #555;
 }
 
-/* Button Style */
-.video-button-container {
-  text-align: center;
-  margin: 30px 0;
-}
-
-#playButton {
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  background: #ff90c2;
+button#playButton {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  background-color: #ff66c4;
   border: none;
-  border-radius: 30px;
   color: white;
+  border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
+  transition: background 0.3s;
 }
 
-#playButton:hover {
-  background: #e058a8;
-  transform: scale(1.05);
+button#playButton:hover {
+  background-color: #ff3399;
 }
 
-/* Modal */
 .modal {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.85);
+  background-color: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 
 .modal video {
-  max-width: 90%;
-  max-height: 80vh;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #ff4dae;
+  width: 90%;
+  max-width: 720px;
+  border: 5px solid white;
+  border-radius: 20px;
 }
 
 .close {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
+  top: 30px;
+  right: 50px;
   color: white;
+  font-size: 40px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-/* Gallery */
 .gallery {
-  padding: 30px 20px;
+  padding: 50px 20px;
   text-align: center;
 }
 
 .gallery h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #ff0080;
+  font-size: 2.2em;
+  color: #ff3399;
+  margin-bottom: 30px;
 }
 
-.gallery-row,
-.clip-row {
+.image-grid,
+.video-grid {
   display: flex;
-  justify-content: center;
-  gap: 15px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 20px;
 }
 
-.gallery img {
-  width: 240px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+.image-grid img,
+.video-grid video {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-.clip-row video {
-  width: 240px;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-
-/* Confetti Animation Placeholder */
-.confetti {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  background-image: url('https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif');
-  background-repeat: repeat;
-  background-size: contain;
-  opacity: 0.4;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  .gallery img,
-  .clip-row video {
-    width: 90%;
-  }
+@keyframes pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
 }
