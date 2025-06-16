@@ -2,62 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Pari 🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 18th Birthday Pari!</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="stars"></div>
-<div class="twinkling"></div>
-  
-  <audio id="backgroundMusic" src="background_music.mp3" autoplay loop></audio>
+  <!-- Background Music -->
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="background_music.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
 
-  <div class="hero">
-    <h1>Happy 18th Birthday Pari 🎉</h1>
-    <p>Pichli baar nahi daali thi uske liye sorry, iss baar uski kasar nikaal di ❤️</p>
-    <button id="playButton">Click Me 🎥</button>
+  <!-- Floating Stars Background -->
+  <div class="stars"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>🎉 Happy 18th Birthday Pari! 🎉</h1>
+    <p class="subtext">You're officially an adult — but always our little star 🌟</p>
+    <button id="playButton" class="decorated-button">Click to Play Your Surprise 🎁</button>
+  </section>
+
+  <!-- Sticky Sorry Note -->
+  <div class="sticky-note">
+    <p>"Pichli baar nhi daali thi uske liye sorry, iss baar uski kasar nikal di!" 😅</p>
   </div>
 
-  <!-- Modal for Main Video -->
-  <div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <video id="mainVideo" controls>
-      <source src="main.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <video id="mainVideo" controls>
+        <source src="main.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
 
   <!-- Gallery Section -->
-  <div class="gallery">
-    <h2>Some Lovely Memories 💖</h2>
-    
-    <!-- Images -->
-    <div class="image-grid">
-      <img src="img1.jpg" alt="Pari 1">
-      <img src="img2.jpg" alt="Pari 2">
-      <img src="img3.jpg" alt="Pari 3">
-    </div>
+  <section class="gallery">
+    <h2>💖 Some Beautiful Memories 💖</h2>
+    <div class="media-container">
+      <img src="img1.jpg" alt="Memory 1" />
+      <img src="img2.jpg" alt="Memory 2" />
+      <img src="img3.jpg" alt="Memory 3" />
 
-    <!-- Clips -->
-    <div class="video-grid">
       <video src="clip1.mp4" autoplay loop muted></video>
       <video src="clip2.mp4" autoplay loop muted></video>
       <video src="clip3.mp4" autoplay loop muted></video>
     </div>
-  </div>
+  </section>
 
-  <canvas id="confetti-canvas"></canvas>
+  <!-- Footer Confetti -->
+  <footer>
+    <p>Made with ❤️ by your friend</p>
+    <canvas id="confetti"></canvas>
+  </footer>
 
   <script src="script.js"></script>
-<footer class="bottom-message">
-  <p>Thanks for being the reason behind so many smiles. Here's to your amazing 18th, Pari! 🎂💖</p>
-  <p>— From Your Friend Riyansh 💫</p>
-</footer>
-
-  <!-- ✨ Animated Stars Background -->
-<div class="stars"></div>
-<div class="twinkling"></div>
-  
 </body>
 </html>
